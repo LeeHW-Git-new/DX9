@@ -78,6 +78,13 @@ struct ST_PT_VERTEX
 	enum { FVF = D3DFVF_XYZ | D3DFVF_TEX1 };
 };
 
+struct face
+{
+	int v;
+	int t;
+	int n;
+};
+
 #define Synthesize(varType, varName, funName) \
 	protected : varType varName ; \
 	public : inline varType Get##funName(void) const {return varName;} \

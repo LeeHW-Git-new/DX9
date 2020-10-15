@@ -4,6 +4,7 @@ class cCamera;
 class cGrid;
 class cBody;
 class cCubeMan;
+class ObjLoader;
 
 class cMainGame
 {
@@ -44,6 +45,7 @@ private:
 	cCamera* m_pCamera;
 	cGrid* m_pGrid;
 	cCubeMan*	m_pCubeMan;
+	ObjLoader* m_ObjLoader;
 
 	// >> : for texture
 	LPDIRECT3DTEXTURE9 m_pTexture;

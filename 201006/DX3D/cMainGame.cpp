@@ -4,6 +4,7 @@
 #include "cCamera.h"
 #include "cGrid.h"
 #include "cCubeMan.h"
+#include "ObjLoader.h"
 
 
 
@@ -42,6 +43,9 @@ void cMainGame::Setup()
 	m_pGrid = new cGrid;
 	m_pGrid->Setup();
 	
+	m_ObjLoader = new ObjLoader;
+	m_ObjLoader->Setup();
+
 	{
 		D3DXCreateTextureFromFile(g_pD3DDevice, L"2020_09_28_mumbo-jumbo-with-mask-15377344.png", &m_pTexture);
 		ST_PT_VERTEX v;
@@ -88,7 +92,10 @@ void cMainGame::Render()
 
 	if (m_pCubeMan)
 		m_pCubeMan->Render();
-
+	
+	if (m_ObjLoader)
+		m_ObjLoader->Render();
+	
 	//Draw_Texture();
 
 	g_pD3DDevice->EndScene();
